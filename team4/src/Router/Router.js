@@ -6,23 +6,23 @@ import ProfileAdd from "../components/profile-pack/profile-add/ProfileAdd";
 import ProfileEdit from "../components/profile-pack/profile-edit/ProfileEdit";
 import ProfileDelete from "../components/profile-pack/profile-delete/ProfileDelete";
 
-const Router = (props) => {    
+const Router = ({ profiles, children }) => {    
 
-    const Principal = () => props.profiles.length === 2 ? 
-                            <Navigate to='/browse' /> :
-                            <Profiles title="¿Quién está viendo ahora?" profiles={props.profiles} action='R' />
+    const Principal = () => profiles.length === 2 ? 
+                            <Navigate to='/home' /> :
+                            <Profiles title="¿Quién está viendo ahora?" profiles={profiles} action='R' />
                             
     return (
         <BrowserRouter>
-            {props.children}
+            {children}
             <Routes>
                 <Route path="/" element={<Principal />}></Route>
-                <Route path="/profiles" element={<Profiles title="¿Quién está viendo ahora?" profiles={props.profiles} action='R' />}></Route>
+                <Route path="/profiles" element={<Profiles title="¿Quién está viendo ahora?" profiles={profiles} action='R' />}></Route>
                 <Route path="/home" element={<Home />}></Route>
-                <Route path="/ManageProfiles" element={<Profiles title="Administrar perfiles:" profiles={props.profiles} action='U' />}></Route>
-                <Route path="/AddProfile" element={<ProfileAdd profiles={props.profiles} />}></Route>
-                <Route path="/EditProfile/:id" element={<ProfileEdit profiles={props.profiles} />}></Route>
-                <Route path="/DeleteProfile/:id" element={<ProfileDelete profiles={props.profiles} />}></Route>
+                <Route path="/ManageProfiles" element={<Profiles title="Administrar perfiles:" profiles={profiles} action='U' />}></Route>
+                <Route path="/AddProfile" element={<ProfileAdd profiles={profiles} />}></Route>
+                <Route path="/EditProfile/:id" element={<ProfileEdit profiles={profiles} />}></Route>
+                <Route path="/DeleteProfile/:id" element={<ProfileDelete profiles={profiles} />}></Route>
             </Routes>
         </BrowserRouter>
     );

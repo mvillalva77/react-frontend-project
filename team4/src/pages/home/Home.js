@@ -8,10 +8,10 @@ const Home = (props) => {
     })
 
     return (
-        <div className="home-container">
+        <div className="home-container">            
             <div className="centered-div animate-container">
                 <h1>Hola Mundo!!!</h1>
-            </div>
+            </div>            
         </div>
     )
 }

@@ -6,7 +6,7 @@ import {Navbar, Container, Nav} from 'react-bootstrap'
 
 const NavBar = (props) => {
     const thisLocation = useLocation();
-    console.log(thisLocation)
+    
     return ( 
         thisLocation.pathname === '/home' ?        
         <Navbar bg='transparent' variant='dark' expand='md' sticky="top" className="animate-container mt-2">    
@@ -19,24 +19,24 @@ const NavBar = (props) => {
                             <Link className="nav-link active" to="#" >Inicio <span className="visually-hidden">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="#">Series</Link>
+                            <Link className="nav-link active" to="#">Series</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="#">Peliculas</Link>
+                            <Link className="nav-link active" to="#">Peliculas</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="#">Novedades populares</Link>
+                            <Link className="nav-link active" to="#">Novedades populares</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="#">Mi lista</Link>
+                            <Link className="nav-link active" to="#">Mi lista</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="#">Explora por idiomas</Link>
+                            <Link className="nav-link active" to="#">Explora por idiomas</Link>
                         </li>
                     </Nav>                    
                 </Navbar.Collapse>
-                <div className="d-flex flex-row ">
-                    <Link className="fas fa-search text-decoration-none text-light fs-5 me-4"></Link>
+                <div className="d-flex flex-row ">                    
+                    <Link className="ms-2 fas fa-search text-decoration-none text-light fs-5 me-4"></Link>
                     <span className="fas fa-bell text-decoration-none text-light fs-5 me-4"></span>
                     <span className="nav-profile-icon bg-5 me-5"></span>
                 </div>
