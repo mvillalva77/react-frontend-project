@@ -10,7 +10,8 @@ const Router = ({ profiles, children }) => {
 
     const Principal = () => profiles.length === 2 ? 
                             <Navigate to='/home' /> :
-                            <Profiles title="¿Quién está viendo ahora?" profiles={profiles} action='R' />
+                            (profiles.length === 0 ? <div className="preloader"></div> :
+                            <Profiles title="¿Quién está viendo ahora?" profiles={profiles} action='R' />)
                             
     return (
         <BrowserRouter>

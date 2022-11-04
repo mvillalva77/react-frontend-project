@@ -43,21 +43,21 @@ function App() {
     const [profiles, setProfiles] = useState([])
     
     useEffect(() => {
-        const getDatos = async (props) =>  {
-            let vec = props
-            const datos = await getDocs(collection(db, "users"));            
-                datos.forEach(doc => {   
-                    vec = [...vec, doc.data()]                    
+        const getDatos = async (profs) =>  {
+            let vec = profs
+            const datos = await getDocs(collection(db, "users"));
+                datos.forEach(doc => {
+                    vec = [...vec, doc.data()]
                     setProfiles(vec);
             });
         }
-        getDatos(profiles)        
-    }, [])
 
+        getDatos(profiles)
+    }, [])
+    
     return (
         <div className="App netflix-sans-font-loaded">
             <Router profiles={profiles}>
-                {console.log(profiles)}
                 <NavBar></NavBar>
             </Router>
         </div>
