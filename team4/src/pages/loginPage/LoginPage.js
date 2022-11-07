@@ -3,10 +3,12 @@ import './LoginPage.css';
 import Login from "../../components/login/Login";
 
 const LoginPage = () =>{
-    <div className="loginPage"> 
-        <Login></Login>
+    return(
+        <div className="loginPage"> 
+            <Login></Login>
 
-    </div>
+        </div>
+    )
 }
 
 export default LoginPage;

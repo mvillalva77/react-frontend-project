@@ -12,11 +12,11 @@ import VideoDescriptionPage from "../pages/videoDescriptionPage/VideoDescription
 
 const Router = ({ profiles, children }) => {    
 
-    const Principal = () => props.profiles.length === 2 ? 
+    const Principal = () => profiles.length === 2 ? 
                             <Navigate to='/browse' /> :
-                            (props.profiles.lenght === 0 ?
+                            (profiles.lenght === 0 ?
                                 <div className="preloader"></div> :
-                                <Profiles title="¿Quién está viendo ahora?" profiles={props.profiles} action='R' />)
+                                <Profiles title="¿Quién está viendo ahora?" profiles={profiles} action='R' />)
                             
     return (
         <BrowserRouter>
@@ -26,12 +26,12 @@ const Router = ({ profiles, children }) => {
                 <Route path="/loginpage" element={<LoginPage />}></Route>
                 <Route path="/LoginHelp" element={<LoginHelp />}></Route>
                 <Route path="/VideoDescriptionPage" element={<VideoDescriptionPage title="Manifiesto" />}></Route>
-                <Route path="/profiles" element={<Profiles title="¿Quién está viendo ahora?" profiles={props.profiles} action='R' />}></Route>
+                <Route path="/profiles" element={<Profiles title="¿Quién está viendo ahora?" profiles={profiles} action='R' />}></Route>
                 <Route path="/home" element={<Home />}></Route>
-                <Route path="/ManageProfiles" element={<Profiles title="Administrar perfiles:" profiles={props.profiles} action='U' />}></Route>
-                <Route path="/AddProfile" element={<ProfileAdd profiles={props.profiles} />}></Route>
-                <Route path="/EditProfile/:id" element={<ProfileEdit profiles={props.profiles} />}></Route>
-                <Route path="/DeleteProfile/:id" element={<ProfileDelete profiles={props.profiles} />}></Route>
+                <Route path="/ManageProfiles" element={<Profiles title="Administrar perfiles:" profiles={profiles} action='U' />}></Route>
+                <Route path="/AddProfile" element={<ProfileAdd profiles={profiles} />}></Route>
+                <Route path="/EditProfile/:id" element={<ProfileEdit profiles={profiles} />}></Route>
+                <Route path="/DeleteProfile/:id" element={<ProfileDelete profiles={profiles} />}></Route>
                 <Route path="/*" element={<><h1>404</h1></>}></Route>
                 {/* <Route path="/slider" element={<Slider />}></Route> */}
             </Routes>
